@@ -1,4 +1,4 @@
-namespace DojoApplicationApi.Areas.HelpPage
+namespace DigitalWareApi.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

@@ -1,0 +1,16 @@
+<h2 class="content-block">Productos</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <dx-data-grid [dataSource]="this.clientes" keyExpr="Id" [allowColumnReordering]="true" [columnAutoWidth]="true" [focusedRowEnabled]="true">
+      <dxo-paging [pageSize]="10"></dxo-paging>
+      <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+      <dxi-column dataField="Id" [width]="100"></dxi-column>
+      <dxi-column dataField="Nombre"></dxi-column>
+      <dxi-column dataField="Edad"></dxi-column>
+      <dxi-column caption="Acción" type="buttons" [width]="100">
+        <dxi-button hint="Clone" icon="repeat" [onClick]=""></dxi-button>
+      </dxi-column>
+      <dxo-search-panel [visible]="true"></dxo-search-panel>
+    </dx-data-grid>
+  </div>
+</div>

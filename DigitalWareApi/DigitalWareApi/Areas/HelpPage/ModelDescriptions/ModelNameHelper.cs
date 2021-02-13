@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace DojoApplicationApi.Areas.HelpPage.ModelDescriptions
+namespace DigitalWareApi.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

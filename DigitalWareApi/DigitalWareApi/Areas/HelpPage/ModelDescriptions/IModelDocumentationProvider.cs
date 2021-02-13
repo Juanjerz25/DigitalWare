@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace DojoApplicationApi.Areas.HelpPage.ModelDescriptions
+namespace DigitalWareApi.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

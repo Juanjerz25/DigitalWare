@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace DojoApplicationApi.Areas.HelpPage
+namespace DigitalWareApi.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using DojoApplicationApi.Areas.HelpPage.ModelDescriptions;
-using DojoApplicationApi.Areas.HelpPage.Models;
+using DigitalWareApi.Areas.HelpPage.ModelDescriptions;
+using DigitalWareApi.Areas.HelpPage.Models;
 
-namespace DojoApplicationApi.Areas.HelpPage
+namespace DigitalWareApi.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

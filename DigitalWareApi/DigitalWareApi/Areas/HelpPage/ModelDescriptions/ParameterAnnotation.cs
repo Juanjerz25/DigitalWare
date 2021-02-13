@@ -1,6 +1,6 @@
 using System;
 
-namespace DojoApplicationApi.Areas.HelpPage.ModelDescriptions
+namespace DigitalWareApi.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

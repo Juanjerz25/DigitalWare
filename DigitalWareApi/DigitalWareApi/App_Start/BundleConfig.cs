@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace DojoApplicationApi
+namespace DigitalWareApi
 {
     public class BundleConfig
     {

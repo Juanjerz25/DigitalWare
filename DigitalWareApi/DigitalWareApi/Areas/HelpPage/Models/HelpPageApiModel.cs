@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using DojoApplicationApi.Areas.HelpPage.ModelDescriptions;
+using DigitalWareApi.Areas.HelpPage.ModelDescriptions;
 
-namespace DojoApplicationApi.Areas.HelpPage.Models
+namespace DigitalWareApi.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

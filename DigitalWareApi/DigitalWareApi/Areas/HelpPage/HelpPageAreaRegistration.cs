@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace DojoApplicationApi.Areas.HelpPage
+namespace DigitalWareApi.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

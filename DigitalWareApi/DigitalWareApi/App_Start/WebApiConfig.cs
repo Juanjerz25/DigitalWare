@@ -2,7 +2,7 @@
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace DojoApplicationApi
+namespace DigitalWareApi
 {
     public static class WebApiConfig
     {
