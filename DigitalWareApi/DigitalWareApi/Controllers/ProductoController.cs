@@ -21,5 +21,29 @@ namespace DigitalWareApi.Controllers
             return result;
         }
 
+        [HttpPost]
+        public HttpResponseMessage CrearProducto([FromBody] ProductoModel request)
+        {
+            var response = ProductoServices.CrearProducto(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage EditarProducto([FromBody] ProductoModel request)
+        {
+            var response = ProductoServices.EditarProducto(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage EliminarProducto([FromBody] ProductoModel request)
+        {
+            var response = ProductoServices.EliminarProducto(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
     }
 }

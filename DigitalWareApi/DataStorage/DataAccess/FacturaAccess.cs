@@ -60,6 +60,58 @@ namespace DataStorage.DataAccess
             return response;
         }
 
+        public static bool EditarFactura(Factura factura)
+        {
+            bool response = false;
+            try
+            {
+                using (var dbContextScope = new DigitalWareEntities())
+                {
+                    var facturaConsulta = dbContextScope.Factura.Where(x => x.Id == factura.Id).FirstOrDefault();
+                    if (facturaConsulta != null)
+                    {
+                        FrammeworkTypeUtility.SetProperties(factura, facturaConsulta);
+                        dbContextScope.SaveChanges();
+                        response = true;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                response = false;
+                throw ex;
+            }
+
+            return response;
+        }
+
+        public static bool EliminarFactura(Factura factura)
+        {
+            bool response = false;
+            try
+            {
+                using (var dbContextScope = new DigitalWareEntities())
+                {
+                    var facturaConsulta = dbContextScope.Factura.Where(x => x.Id == factura.Id).FirstOrDefault();
+                    if (facturaConsulta != null)
+                    {
+                        dbContextScope.Factura.Remove(facturaConsulta);
+                        dbContextScope.SaveChanges();
+                        response = true;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                response = false;
+                throw ex;
+            }
+
+            return response;
+        }
+
         public static bool CrearFacturaProducto(FacturaProducto facturaProducto)
         {
             bool response = false;
@@ -74,6 +126,32 @@ namespace DataStorage.DataAccess
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+
+            return response;
+        }
+
+        public static bool EditarFacturaProducto(FacturaProducto facturaProducto)
+        {
+            bool response = false;
+            try
+            {
+                using (var dbContextScope = new DigitalWareEntities())
+                {
+                    var facturaProductoConsulta = dbContextScope.FacturaProducto.Where(x => x.Id == facturaProducto.Id).FirstOrDefault();
+                    if (facturaProductoConsulta != null)
+                    {
+                        FrammeworkTypeUtility.SetProperties(facturaProducto, facturaProductoConsulta);
+                        dbContextScope.SaveChanges();
+                        response = true;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                response = false;
                 throw ex;
             }
 

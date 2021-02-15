@@ -32,4 +32,14 @@ namespace DigitalWareServices.Response
             FacturaProducto = facturaProductoModel;
         }
     }
+
+    public sealed class FacturaProductoResponse : BaseGatewayResponse
+    {
+        public FacturaProductoModel FacturaProducto { get; set; }
+
+        public FacturaProductoResponse(FacturaProductoModel facturaProductoModel, bool success = false, IEnumerable<Mensaje> mensajes = null) : base(success, mensajes)
+        {
+            FacturaProducto = facturaProductoModel;
+        }
+    }
 }

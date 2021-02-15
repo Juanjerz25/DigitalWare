@@ -84,5 +84,155 @@ namespace DigitalWareServices.Services
                 return new FacturaResponse(null, false, mensajes);
             }
         }
+
+        public static FacturaResponse EditarFactura(FacturaModel request)
+        {
+            var mensajes = new List<Mensaje>();
+
+            try
+            {
+                // No tiene errores
+                if (mensajes.Count == 0)
+                {
+                    Factura factura = ConfigAutomapper.mapper.Map<Factura>(request);
+                    FacturaAccess.EditarFactura(factura);
+                    FacturaModel facturaModel = ConfigAutomapper.mapper.Map<FacturaModel>(factura);
+
+                    mensajes.Add(new Mensaje("1", "Registro Modificado Correctamente"));
+                    return new FacturaResponse(facturaModel, true, mensajes);
+                }
+                else
+                {
+                    return new FacturaResponse(null, false, mensajes);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Captura de errores
+                mensajes.Add(new Mensaje("Error", ex.Message));
+
+                return new FacturaResponse(null, false, mensajes);
+            }
+        }
+
+        public static FacturaResponse EliminarFactura(FacturaModel request)
+        {
+            var mensajes = new List<Mensaje>();
+
+            try
+            {
+                // No tiene errores
+                if (mensajes.Count == 0)
+                {
+                    Factura factura = ConfigAutomapper.mapper.Map<Factura>(request);
+                    FacturaAccess.EliminarFactura(factura);
+                    FacturaModel facturaModel = ConfigAutomapper.mapper.Map<FacturaModel>(factura);
+
+                    mensajes.Add(new Mensaje("1", "Registro Modificado Correctamente"));
+                    return new FacturaResponse(facturaModel, true, mensajes);
+                }
+                else
+                {
+                    return new FacturaResponse(null, false, mensajes);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Captura de errores
+                mensajes.Add(new Mensaje("Error", ex.Message));
+
+                return new FacturaResponse(null, false, mensajes);
+            }
+        }
+
+        public static FacturaProductoResponse CrearFacturaProducto(FacturaModel request)
+        {
+            var mensajes = new List<Mensaje>();
+
+            try
+            {
+                // No tiene errores
+                if (mensajes.Count == 0)
+                {
+                    FacturaProducto facturaProducto = ConfigAutomapper.mapper.Map<FacturaProducto>(request);
+                    FacturaAccess.CrearFacturaProducto(facturaProducto);
+                    FacturaProductoModel facturaProductoModel = ConfigAutomapper.mapper.Map<FacturaProductoModel>(facturaProducto);
+
+                    mensajes.Add(new Mensaje("1", "Registro Creado Correctamente"));
+                    return new FacturaProductoResponse(facturaProductoModel, true, mensajes);
+                }
+                else
+                {
+                    return new FacturaProductoResponse(null, false, mensajes);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Captura de errores
+                mensajes.Add(new Mensaje("Error", ex.Message));
+
+                return new FacturaProductoResponse(null, false, mensajes);
+            }
+        }
+
+        public static FacturaProductoResponse EditarFacturaProducto(FacturaModel request)
+        {
+            var mensajes = new List<Mensaje>();
+
+            try
+            {
+                // No tiene errores
+                if (mensajes.Count == 0)
+                {
+                    FacturaProducto facturaProducto = ConfigAutomapper.mapper.Map<FacturaProducto>(request);
+                    FacturaAccess.EditarFacturaProducto(facturaProducto);
+                    FacturaProductoModel facturaProductoModel = ConfigAutomapper.mapper.Map<FacturaProductoModel>(facturaProducto);
+
+                    mensajes.Add(new Mensaje("1", "Registro Creado Correctamente"));
+                    return new FacturaProductoResponse(facturaProductoModel, true, mensajes);
+                }
+                else
+                {
+                    return new FacturaProductoResponse(null, false, mensajes);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Captura de errores
+                mensajes.Add(new Mensaje("Error", ex.Message));
+
+                return new FacturaProductoResponse(null, false, mensajes);
+            }
+        }
+
+        public static FacturaProductoResponse EliminarFacturaProducto(FacturaModel request)
+        {
+            var mensajes = new List<Mensaje>();
+
+            try
+            {
+                // No tiene errores
+                if (mensajes.Count == 0)
+                {
+                    FacturaProducto facturaProducto = ConfigAutomapper.mapper.Map<FacturaProducto>(request);
+                    FacturaAccess.EliminarFacturaProducto(facturaProducto.Id);
+                    FacturaProductoModel facturaProductoModel = ConfigAutomapper.mapper.Map<FacturaProductoModel>(facturaProducto);
+
+                    mensajes.Add(new Mensaje("1", "Registro Creado Correctamente"));
+                    return new FacturaProductoResponse(facturaProductoModel, true, mensajes);
+                }
+                else
+                {
+                    return new FacturaProductoResponse(null, false, mensajes);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Captura de errores
+                mensajes.Add(new Mensaje("Error", ex.Message));
+
+                return new FacturaProductoResponse(null, false, mensajes);
+            }
+        }
     }
 }

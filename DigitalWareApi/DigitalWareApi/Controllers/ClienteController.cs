@@ -21,5 +21,29 @@ namespace DigitalWareApi.Controllers
             return result;
         }
 
+        [HttpPost]
+        public HttpResponseMessage CrearCliente([FromBody] ClienteModel request)
+        {
+            var response = ClienteServices.CrearCliente(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage EditarCliente([FromBody] ClienteModel request)
+        {
+            var response = ClienteServices.EditarCliente(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage EliminarCliente([FromBody] ClienteModel request)
+        {
+            var response = ClienteServices.EliminarCliente(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
     }
 }

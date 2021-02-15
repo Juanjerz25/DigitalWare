@@ -14,6 +14,7 @@ namespace DigitalWareServices.Utilities
                 cfg.CreateMap<FacturaModel, Factura>().ReverseMap();
                 cfg.CreateMap<FacturaModel, Facturas>().ReverseMap();
                 cfg.CreateMap<FacturaProductoModel, FacturaProductos>().ReverseMap();
+                cfg.CreateMap<FacturaProductoModel, FacturaProducto>().ReverseMap();
                 cfg.CreateMap<ProductoModel, Producto>().ReverseMap();
                 cfg.CreateMap<ClienteModel, Cliente>().ReverseMap();
             });

@@ -37,6 +37,46 @@ namespace DigitalWareApi.Controllers
             return result;
         }
 
+        [HttpPost]
+        public HttpResponseMessage EditarFactura([FromBody] FacturaModel request)
+        {
+            var response = FacturaServices.EditarFactura(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage EliminarFactura([FromBody] FacturaModel request)
+        {
+            var response = FacturaServices.EliminarFactura(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage CrearFacturaProducto([FromBody] FacturaModel request)
+        {
+            var response = FacturaServices.CrearFacturaProducto(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage EditarFacturaProducto([FromBody] FacturaModel request)
+        {
+            var response = FacturaServices.EditarFacturaProducto(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage EliminarFacturaProducto([FromBody] FacturaModel request)
+        {
+            var response = FacturaServices.EliminarFacturaProducto(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
 
 
     }

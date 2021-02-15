@@ -45,5 +45,58 @@ namespace DataStorage.DataAccess
             return response;
         }
 
+
+        public static bool EditarProducto(Producto producto)
+        {
+            bool response = false;
+            try
+            {
+                using (var dbContextScope = new DigitalWareEntities())
+                {
+                    var productoConsulta = dbContextScope.Producto.Where(x => x.Id == producto.Id).FirstOrDefault();
+                    if (productoConsulta != null)
+                    {
+                        FrammeworkTypeUtility.SetProperties(producto, productoConsulta);
+                        dbContextScope.SaveChanges();
+                        response = true;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                response = false;
+                throw ex;
+            }
+
+            return response;
+        }
+
+        public static bool EliminarProducto(Producto producto)
+        {
+            bool response = false;
+            try
+            {
+                using (var dbContextScope = new DigitalWareEntities())
+                {
+                    var productoConsulta = dbContextScope.Producto.Where(x => x.Id == producto.Id).FirstOrDefault();
+                    if (productoConsulta != null)
+                    {
+                        dbContextScope.Producto.Remove(productoConsulta);
+                        dbContextScope.SaveChanges();
+                        response = true;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                response = false;
+                throw ex;
+            }
+
+            return response;
+        }
+
     }
 }
