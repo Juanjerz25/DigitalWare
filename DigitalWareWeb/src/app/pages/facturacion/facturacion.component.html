@@ -1,17 +1,30 @@
 <h2 class="content-block">Facturación</h2>
 <div class="content-block">
   <div class="dx-card responsive-paddings">
-    <dx-data-grid [dataSource]="this.facturas" keyExpr="Id" [allowColumnReordering]="true" [columnAutoWidth]="true" [focusedRowEnabled]="true">
-      <dxo-paging [pageSize]="10"></dxo-paging>
-      <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
-      <dxi-column dataField="Id" [width]="100"></dxi-column>
-      <dxi-column dataField="ClienteNombre"></dxi-column>
-      <dxi-column dataField="ValorTotal"></dxi-column>
-      <dxi-column dataField="Fecha" dataType="date"></dxi-column>
-      <dxi-column caption="Acción" type="buttons" [width]="100">
-        <dxi-button hint="Clone" icon="repeat" [onClick]=""></dxi-button>
-      </dxi-column>
-      <dxo-search-panel [visible]="true"></dxo-search-panel>
-    </dx-data-grid>
+    <div class="row">
+      <dx-button text="Crear Factura" type="default" [width]="200" (onClick)="crearFactura()">
+      </dx-button>
+    </div>
+    <div class="row">
+      <dx-data-grid [dataSource]="this.facturas" keyExpr="Id" [allowColumnReordering]="true" [columnAutoWidth]="true"
+        [focusedRowEnabled]="true" >
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+        <dxi-column dataField="Id" [width]="100"></dxi-column>
+        <dxi-column dataField="ClienteNombre"></dxi-column>
+        <dxi-column dataField="ValorTotal"></dxi-column>
+        <dxi-column dataField="Fecha" dataType="date"></dxi-column>
+        <dxi-column caption="Acción" type="buttons" [width]="100">
+          <dxi-button hint="Clone" icon="repeat" [onClick]="abrirFactura"></dxi-button>
+        </dxi-column>
+        <dxo-search-panel [visible]="true"></dxo-search-panel>
+      </dx-data-grid>
+    </div>
   </div>
 </div>
+
+<dx-popup [width]="300" [height]="250" [showTitle]="true" title="Crear Factura" [dragEnabled]="false"
+  [closeOnOutsideClick]="true" [(visible)]="popupVisible" (onHiding)="crearFacturaAfterClose()" [height]="500"
+  [width]="500" >
+  <app-agregar-factura></app-agregar-factura>
+</dx-popup>

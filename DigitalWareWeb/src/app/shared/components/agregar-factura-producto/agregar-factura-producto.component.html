@@ -1,0 +1,22 @@
+<dx-form [(formData)]="factura" (onFieldDataChanged)="form_fieldDataChanged($event)">
+  <dxi-item dataField="ClienteId" editorType="dxSelectBox" [editorOptions]="selectBoxOptions"></dxi-item>
+  <dxi-item dataField="ValorTotal" [editorOptions]="{ disabled: true }"></dxi-item>
+  <dxi-item dataField="Fecha" editorType="dxDateBox" [editorOptions]="{ disabled: true }"></dxi-item>
+</dx-form>
+<div class="row" *ngIf="this.nuevaFactura">
+  <dx-button text="Guardar Información" type="default" [width]="200" (onClick)="crearInfoFactura()">
+  </dx-button>
+</div>
+
+<div class="row">
+  <dx-data-grid [dataSource]="this.FacturaProductos" keyExpr="Id" [allowColumnReordering]="true"
+    [columnAutoWidth]="true" [focusedRowEnabled]="true">
+    <dxi-column dataField="ProductoNombre" [width]="100"></dxi-column>
+    <dxi-column dataField="Cantidad"></dxi-column>
+    <dxi-column dataField="ValorTotal"></dxi-column>
+    <!-- <dxi-column caption="Acción" type="buttons" [width]="100">
+      <dxi-button hint="Clone" icon="repeat" [onClick]="abrirFactura"></dxi-button>
+    </dxi-column> -->
+    <!-- <dxo-search-panel [visible]="true"></dxo-search-panel> -->
+  </dx-data-grid>
+</div>

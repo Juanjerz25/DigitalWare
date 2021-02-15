@@ -30,4 +30,8 @@ export class ProductoComponent {
       () => (this.isLoading = false)        // onCompleted
     );
   }
+
+  abrirProducto(e){
+    
+  }
 }

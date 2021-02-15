@@ -29,6 +29,14 @@ namespace DigitalWareApi.Controllers
             return result;
         }
 
+        [HttpPost]
+        public HttpResponseMessage CrearFactura([FromBody] FacturaModel request)
+        {
+            var response = FacturaServices.CrearFactura(request);
+            HttpResponseMessage result = Request.CreateResponse(HttpStatusCode.OK, response);
+            return result;
+        }
+
 
 
     }

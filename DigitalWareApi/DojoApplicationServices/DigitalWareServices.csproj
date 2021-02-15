@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\ClienteModel.cs" />
+    <Compile Include="Models\FacturaProductoModel.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Models\FacturaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

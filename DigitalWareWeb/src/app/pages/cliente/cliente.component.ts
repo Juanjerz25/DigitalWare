@@ -1,6 +1,7 @@
 import { Cliente } from './../../interface/cliente';
 import { Component } from '@angular/core';
 import { HttpService } from 'src/app/shared/services/http.service';
+import DataSource from 'devextreme/data/data_source';
 
 @Component({
   templateUrl: 'cliente.component.html',
@@ -11,6 +12,7 @@ export class ClienteComponent {
   clientes: Cliente[];
   msg: string;
   isLoading: boolean;
+  selectBoxDataSource: DataSource;
   constructor(private service: HttpService) {
     this.obtenerClientes();
 
@@ -31,5 +33,9 @@ export class ClienteComponent {
       error => (this.msg = (error as any)), // error
       () => (this.isLoading = false)        // onCompleted
     );
+  }
+
+  abrirCliente(){
+    
   }
 }
